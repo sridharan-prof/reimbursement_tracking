@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
+employee_dept,employee_dept,model_employee_departments,,1,1,1,1
+employee_profile,employee_profile,model_employee_profile,,1,1,1,1
+employee_reimbursement_details,employee_reimbursement_details,model_reimbursement_details,,1,1,1,1
+employee_reimbursement_state_change,employee_reimbursement_state_change,model_reimbursement_state_change_details,,1,1,1,1
+employee_reimbursement_type,employee_reimbursement_type,model_reimbursement_type,,1,1,1,1

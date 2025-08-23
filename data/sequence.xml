@@ -1,0 +1,22 @@
+<odoo>
+    <!-- Sequences for category -->
+    <data noupdate='1'> <!-- which means if the user changed some values in ui means it will remain constant-->
+        <record id="seq_emp_reference" model="ir.sequence">
+            <field name="name">Employee Reference</field>
+            <field name="code">employee.profile</field>
+            <field name="prefix">EMP</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+
+    <data noupdate='1'> <!-- which means if the user changed some values in ui means it will remain constant-->
+        <record id="seq_dept_reference" model="ir.sequence">
+            <field name="name">Department Reference</field>
+            <field name="code">employee.departments</field>
+            <field name="prefix">DEPT</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
