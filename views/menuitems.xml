@@ -8,4 +8,12 @@
     <menuitem id = "menu_employee_detail" name = "Details"
         parent = "menu_employee_department_root" action = "action_reimbursement_details" />
 
+    <menuitem id = "menu_employee_department" name = "Employee Departments" sequence = "2"
+        parent = "menu_employee_root" action = "action_employee_department" />
+
+    <menuitem
+        id="employee_profile_menu" name="Employee Profile" sequence="1"
+        action="action_employee_profile"  parent="menu_employee_root" />
+
+    
 </odoo>
