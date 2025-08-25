@@ -1,0 +1,96 @@
+.custom-navbar {
+  background-color: #0052cc;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.custom-navbar .navbar-brand {
+  color: white; 
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.custom-navbar .dropdown-menu {
+  background-color: #0052cc; 
+  border: none;
+}
+
+.custom-navbar .dropdown-item {
+  color: #e5e7eb;
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #0052cc;
+  color: white;
+}
+
+.department-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.department-container h2 {
+    color: #0052cc;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.department-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.department-container li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #ecf0f1;
+    border-left: 5px solid #3498db;
+    font-size: 16px;
+}
+.department-item {
+    transition: background-color 0.3s ease;
+}
+
+.department-item:hover {
+    background-color: #dfe6e9;
+    cursor: pointer;
+}
+.o_dept_card .card {
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search_button{
+    background-color:  #0052cc;
+    color:white;
+    border: none;
+}
+
+.details_button{
+    background-color: #0052cc;
+    color: white;
+}
+
+.o_dept_card .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-right: 15px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+

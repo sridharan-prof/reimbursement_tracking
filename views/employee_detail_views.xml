@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_reimbursement_details_tree" model="ir.ui.view">
+        <field name="name">reimbursement.details.tree</field>
+        <field name="model">reimbursement.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="type_id"/>
+                <field name="amount"/>
+                <field name="submitted_date"/>
+                <field name="current_status"/>
+                <field name="state_changes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_reimbursement_details_form" model="ir.ui.view">
+        <field name="name">reimbursement.details.form</field>
+        <field name="model">reimbursement.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="type_id"/>
+                        <field name="amount"/>
+                        <field name="submitted_date"/>
+                        <field name="current_status"/>
+                        <field name="state_changes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_reimbursement_details" model="ir.actions.act_window">
+        <field name="name">Details</field>
+        <field name="res_model">reimbursement.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

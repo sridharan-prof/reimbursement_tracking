@@ -10,12 +10,13 @@
         </record>
     </data>
 
-    <data noupdate='1'> <!-- which means if the user changed some values in ui means it will remain constant-->
+    <data noupdate="1">
         <record id="seq_dept_reference" model="ir.sequence">
             <field name="name">Department Reference</field>
             <field name="code">employee.departments</field>
             <field name="prefix">DEPT</field>
-            <field name="padding">5</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
             <field name="company_id" eval="False"/>
         </record>
     </data>
