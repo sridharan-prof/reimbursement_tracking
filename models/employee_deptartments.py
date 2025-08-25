@@ -11,5 +11,5 @@ class EmployeeDepartments(models.Model):
     def create(self, val_list):
         for vals in val_list:
             if not vals.get('dept_id') or vals['dept_id'] == 'New':
-                vals['dept_id'] = self.env['ir.sequence'].next_by_code('employee.profile')
+                vals['dept_id'] = self.env['ir.sequence'].next_by_code('employee.departments')
         return val_list

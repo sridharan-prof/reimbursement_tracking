@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="custom_header" inherit_id="website.layout">
+    <xpath expr="//header" position="replace">
+    <t t-if="request.httprequest.path != '/login'">
+      <header id="custom_header" class="o_my_custom_header">
+        <nav class="navbar navbar-expand-lg" style="background-color: #0052cc;">
+          <div class="container-fluid">
+            <a class="nav-link" href="#"><img src="/reimbursement_tracking/static/src/img/company_full_logo.png" alt="Company Logo" class="img-fluid" style="max-height:40px;"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">User &amp; access</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Employee</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Attendance</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Organization</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Company Policy</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Task</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Reimbursement</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">reports</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="contactus">Contact </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </t>
+    </xpath>
+  </template>
+
+  <template id="hello_page_template" name="Hello OWL Page">
+    <t t-call="website.layout"> <!-- master layout with default header and footer-->
+      <div class="container mt-5">
+        <h2 class="text-center">Frontend OWL Examples</h2>
+        <owl-component name="reimbursement_tracking.HelloComponent"/> <!-- Here odoo knows to load an OWL component but not yet know which one. it looks up the registry and finds your class.-->
+      </div>
+    </t>
+  </template>
+
+  <template id="remove_footer" inherit_id="website.layout">
+    <xpath expr="//div[@id='footer']" position="replace">
+      <!-- Empty: Removes the default footer -->
+    </xpath>
+  </template>
+
+  <!-- <template id="homepage_inherit" inherit_id="website.homepage">
+    <xpath expr="//div[@id='wrap']" position="inside">
+      <h2 class="text-center">Frontend OWL Example</h2>
+      <owl-component name="reimbursement_tracking.HelloComponent"/>
+    </xpath>
+  </template> -->
+
+
+</odoo>
