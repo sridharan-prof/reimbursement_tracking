@@ -1,7 +1,11 @@
 <odoo>
+    <menuitem id = "menu_employee_department_root"
+        name = "Reimbursement Tracking" sequence = "-5"/>
 
-    <menuitem id = "menu_employee_root" name = "Reimbursement Tracking" sequence = "-3" />
+    <menuitem id = "menu_employee_department" name = "Departments"
+        parent = "menu_employee_department_root" action = "action_employee_departments" />
 
-    <menuitem id = "menu_employee_department" name = "Employee Departments" sequence = "1"
-        parent = "menu_employee_root" action = "action_employee_department" />
+    <menuitem id = "menu_employee_detail" name = "Details"
+        parent = "menu_employee_department_root" action = "action_reimbursement_details" />
+
 </odoo>
