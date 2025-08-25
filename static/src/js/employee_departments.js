@@ -1,4 +1,4 @@
-odoo.define('reimbursement_details.employee_departments', [], function (require) {
+odoo.define('reimbursement_tracking.employee_departments', [], function (require) {
     document.addEventListener('DOMContentLoaded', function () {
 
         const input = document.getElementById('dept-search');
