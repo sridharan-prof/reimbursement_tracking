@@ -1,0 +1,68 @@
+.o_my_custom_header .nav-link {
+    color: #fff !important;   /* force white text */
+}
+
+.login {
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    
+}
+
+
+.email_pass {
+    width: 375px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+}
+
+.email, .pass {
+    border: 1px solid black;
+}
+
+/* >- refers to the parent child combinator
+    ~ refers to the sibiling combinator */
+.form-floating > .form-control:focus ~ label {
+    color: black;
+    font-size: medium;
+}
+
+.form-floating > input:focus {
+    box-shadow:  0 0 0 1px #0077b5;
+}
+
+.forgot {
+    color:#2b6bb3;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+    background-color: #cce6ff;
+    border-radius: 50px;
+}
+
+.form-check > input:focus {
+    box-shadow: none;
+}
+
+.form-check > input:checked + label::after {
+    background: rgba(0, 0, 0, 0);
+}
+
+#Defaultloggedin {
+  width: 20px;
+  height: 20px;
+}
+
+.sign-in {
+    width: 200px;
+    border-radius: 50px;
+    background-color: #0073b1;
+}
+
+.sign-in:hover {
+    background-color: #0a66c2;
+}
