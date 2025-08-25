@@ -1,43 +1,7 @@
 <odoo>
 
-  <template id="remove_header" inherit_id="website.layout">
-    <xpath expr="//header[@id='top']" position="replace">
-      <!-- Empty: Removes the default header -->
-    </xpath>
-  </template>
-
-  <template id="remove_footer" inherit_id="website.layout">
-    <xpath expr="//div[@id='footer']" position="replace">
-      <!-- Empty: Removes the default footer -->
-    </xpath>
-  </template>
-
-  <template id="reimbursement_details.details_page_template" name="Details Page">
+  <template id="reimbursement_tracking.details_page_template" name="Details Page">
     <t t-call="website.layout">
-      <!--Navbar -->
-      <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">MyCompany</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/departments">Departments</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/employees">Employees</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contactus">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
     </t>
   </template>
 </odoo>
