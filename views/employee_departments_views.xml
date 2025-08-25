@@ -1,34 +1,32 @@
 <odoo>
-    <!-- Tree View -->
     <record id="view_employee_departments_tree" model="ir.ui.view">
         <field name="name">employee.departments.tree</field>
         <field name="model">employee.departments</field>
         <field name="arch" type="xml">
             <tree>
-                <field name = "dept_id" />
-                <field name = "name" />
+                <field name="dept_id"/>
+                <field name="name"/>
             </tree>
         </field>
     </record>
 
-    <!-- Form View -->
-    <record id="view_employee_attendance_form" model="ir.ui.view">
+    <record id="view_employee_departments_form" model="ir.ui.view">
         <field name="name">employee.departments.form</field>
         <field name="model">employee.departments</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                        <field name = "dept_id" />
-                        <field name = "name" />
+                        <field name="dept_id" readonly="1"/>
+                        <field name="name"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="action_employee_department" model="ir.actions.act_window">
-        <field name="name">Employee Departments</field>
+    <record id="action_employee_departments" model="ir.actions.act_window">
+        <field name="name">Departments</field>
         <field name="res_model">employee.departments</field>
         <field name="view_mode">tree,form</field>
     </record>
