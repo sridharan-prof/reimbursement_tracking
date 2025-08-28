@@ -1,13 +1,14 @@
 {
     'name': "Reimbursement Tracking",
     'version': "1.0",
-    'depends': ['base', 'web', 'website'],
+    'depends': ['base', 'hr', 'web', 'website'],
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
         'views/employee_departments_views.xml',
         'views/templates.xml',
         'views/login.xml',
+        'views/emp_profile.xml',
         'views/employee_profile.xml',
         'views/employee_detail_views.xml',
         'views/menuitems.xml',
