@@ -33,7 +33,7 @@
 }
 
 .forgot {
-    color:#2b6bb3;
+    color:#0052cc;
     font-weight: 500;
     text-decoration: none;
 }
@@ -60,7 +60,7 @@
 .sign-in {
     width: 200px;
     border-radius: 50px;
-    background-color: #0073b1;
+    background-color: #0052cc;
 }
 
 .sign-in:hover {

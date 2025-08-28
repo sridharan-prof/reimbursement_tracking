@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <!-- Standalone login page -->
   <template id="login_page" name="Login Page" t-name="reimbursement_tracking.login_page">
     <t t-call="website.layout">
 
-        <!-- Custom Login Header -->
+        <!--  Login Header -->
         <header id="login_custom_header" class="text-white py-2" style="background-color: #0052cc;">
             <div class="container">
             <h4 class="mb-0">Welcome to Authenzia</h4>
-            <p class="mb-0">Please log in to continue</p>
             </div>
         </header>
 
         <!-- Login Body -->
-       <form>
+        <form action="/login" method="post">
+             <!-- CSRF token for security -->
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <!-- Alter Message -->
+            <t t-if="error">
+                <div class="alert alert-danger w-100 text-center">
+                    <t t-esc="error"/>
+                </div>
+            </t>
+
             <div class="d-flex justify-content-center align-items-center mt-4 pt-3">
                 <div class="card login pt-4 d-flex flex-column align-items-center">
-                    
                     <!-- Logo -->
                     <div class="text-center">
                         <img src="/reimbursement_tracking/static/src/img/logo.jpg" alt="Company Logo" class="img-fluid" style="max-height:100px;"/>
@@ -25,21 +31,21 @@
                         <img src="/reimbursement_tracking/static/src/img/company_name.png" alt="Company Logo" class="img-fluid" style="max-height:50px;"/>
                     </div>
 
-                    <!-- Email form -->
+                    <!-- Email / Username -->
                     <div class="form-floating mb-3 p-0 text-center email_pass">
-                        <input type="email" class="form-control email" id="floatingInputemail" placeholder="name@example.com" required="required"/>
+                        <input type="text" class="form-control email" id="floatingInputemail" name="login" placeholder="name@example.com" required="required"/>
                         <label for="floatingInputemail">Email or phone</label>
                     </div>
 
-                    <!-- Password form -->
+                    <!-- Password -->
                     <div class="form-floating mt-3 text-center email_pass">
-                        <input type="password" class="form-control pass" id="floatingPassword" placeholder="Password" required="required"/>
+                        <input type="password" class="form-control pass" id="floatingPassword" name="password" placeholder="Password" required="required"/>
                         <label for="floatingPassword">Password</label>
                     </div>
 
                     <!-- Forgot password -->
                     <div class="mt-3 text-start px-3">
-                        <a href="#" class="forgot">Forgot password?</a>
+                        <a href="/web/reset_password" class="forgot">Forgot password?</a>
                     </div>
 
                     <!-- Submit -->

@@ -1,0 +1,30 @@
+<odoo>
+
+  <template id="custom_web_login" inherit_id="web.login">
+
+    <!-- Add logos before the form -->
+    <xpath expr="//form" position="before"> 
+
+        <div class="d-flex justify-content-center align-items-center mt-4 pt-3">
+            <div class="card login pt-4 d-flex flex-column align-items-center">
+                <div class="text-center m-0 p-0">
+                    <img src="/reimbursement_tracking/static/src/img/logo.jpg" style="max-height:100px;" />
+                </div>
+                <div class="text-center m-0 p-0">
+                    <img src="/reimbursement_tracking/static/src/img/company_name.png" style="max-height:50px;" />
+                </div>
+            </div>
+        </div>
+    </xpath>
+
+    <xpath expr="//input[@name='login']" position="attributes">
+        <attribute name="placeholder">Email or phone</attribute>
+        <attribute name="class">form-control email</attribute>
+    </xpath>
+
+    <xpath expr="//input[@name='password']" position="attributes">
+        <attribute name="placeholder">Password</attribute>
+        <attribute name="class">form-control pass</attribute>
+    </xpath>
+  </template>
+</odoo>

@@ -1,0 +1,15 @@
+# Ignore pycache inside any module
+*__pycache__/
+.idea
+
+# But don't ignore these:
+!reimbursement_tracking/
+!reimbursement_tracking/**
+ 
+# Still ignore auto-generated and editor files inside your module
+reimbursement_tracking/__pycache__/
+reimbursement_tracking/**/*.pyc
+reimbursement_tracking/**/*.pyo
+reimbursement_tracking/**/*.log
+reimbursement_tracking/.vscode/
+reimbursement_tracking/.idea/

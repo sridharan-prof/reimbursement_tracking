@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- FORM VIEW -->
     <record id="employee_profile_view_form" model="ir.ui.view">
         <field name="name">employee.profile.view.form</field>
         <field name="model">employee.profile</field>
@@ -8,43 +9,65 @@
             <form string="Employee Profile">
                 <sheet>
                     <group>
-                        <field name="employee_id"></field>
-                        <field name="first_name"></field>
-                        <field name="middle_name"></field>
-                        <field name="last_name"></field>
-                        <field name="department"></field>
-                        <field name="email"></field>
-                        <field name="company_id"></field>
-                        <field name="user_id"></field>
+                        <field name="hr_employee_id"/>
+                        <field name="user_id"/>
+                        <field name="name"/>
+                        <field name="job_position"/>
+                        <field name="work_mobile"/>
+                        <field name="work_email"/>
+                        <field name="work_address"/>
+                        <field name="working_hours"/>
+                        <field name="timezone"/>
+                    </group>
+
+                    <group string="Personal Info">
+                        <field name="personal_email"/>
+                        <field name="phone"/>
+                        <field name="language"/>
+                    </group>
+
+                    <group string="Family Status">
+                        <field name="marital_status"/>
+                    </group>
+
+                    <group string="Emergency Contact">
+                        <field name="contact_name"/>
+                        <field name="contact_number"/>
+                    </group>
+
+                    <group string="Education">
+                        <field name="certificate_level"/>
+                        <field name="field_of_study"/>
+                        <field name="school"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- TREE STRUCTURE  -->
-    <record id="employee_profile_view_tree" model="ir.ui.view">
-        <field name="name">employee.profile.view.tree</field>
+
+    <!-- TREE VIEW -->
+    <record id="view_employee_profile_tree" model="ir.ui.view">
+        <field name="name">employee.profile.tree</field>
         <field name="model">employee.profile</field>
         <field name="arch" type="xml">
-            <tree string="Employee Profile">
-                <field name="employee_id"></field>
-                <field name="first_name"></field>
-                <field name="middle_name"></field>
-                <field name="last_name"></field>
-                <field name="department"></field>
-                <field name="email"></field>
-                <field name="company_id"></field>
-                <field name="user_id"></field>
+            <tree string="Employee Profiles">
+                <field name="name"/>
+                <field name="job_position"/>
+                <field name="department"/>
+                <field name="work_email"/>
+                <field name="work_mobile"/>
+                <field name="user_id"/>
+                <field name="company_id"/>
             </tree>
         </field>
     </record>
 
 
-    <record id="action_employee_profile" model="ir.actions.act_window"> <!-- is a window action  what Odoo uses to open views (like forms or lists)-->
-        <field name="name">Employee Profile</field> <!--  label for the action-->
-        <field name="res_model">employee.profile</field> <!-- res means resource that target which model to open-->
-        <field name="view_mode">tree,form</field> <!-- type of views to show(form, tree, kanban)-->
+    <record id="action_employee_profile" model="ir.actions.act_window">
+        <field name="name">Employee Profile</field>
+        <field name="res_model">employee.profile</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
 </odoo>

@@ -1,0 +1,21 @@
+<odoo>
+  <template id="employee_profile_page">
+    <t t-call="website.layout">
+      <div class="container mt-5">
+        <div class="d-flex justify-content-center align-items-center mt-4 pt-3">
+            <div class="card login pt-4 d-flex flex-column align-items-center">
+                <h2>Employee Profile</h2>
+                <t t-if="employee">
+                <p><strong>Name:</strong> <t t-esc="employee.name"/></p>
+                <p><strong>Position:</strong> <t t-esc="employee.job_position"/></p>
+                <p><strong>Email:</strong> <t t-esc="employee.work_email"/></p>
+                </t>
+                <t t-else="">
+                <p>No profile found for your account.</p>
+                </t>
+            </div>
+        </div>
+        </div>
+    </t>
+  </template>
+</odoo>
