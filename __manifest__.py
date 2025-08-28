@@ -14,6 +14,8 @@
         'views/menuitems.xml',
         'views/employee_department_templates.xml',
         'views/employee_detail_template.xml',
+        'views/reimbursement_details_views.xml',
+        'views/reimbursement_details_template.xml',
     ],
     'assets': {
         'web.assets_backend': [

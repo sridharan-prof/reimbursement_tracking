@@ -24,16 +24,29 @@
               <!-- Menu Items -->
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Dashboard</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">User &amp; access</a></li>
-                  <li class="nav-item"><a class="nav-link" href="employeeprofile">Employee</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Attendance</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Organization</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/departments">Department</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Task</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Reimbursement</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/contactus">Contact</a></li>
+                  <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
+                  </li>
+                  
+                      <!-- Visible only for Employee -->
+                  <t t-if="request.env.user.has_group('base.group_user') and not request.env.user.has_group('hr.group_hr_user') and not request.env.user.has_group('hr.group_hr_manager')">
+                    <li class="nav-item"><a class="nav-link" href="/employeeprofile">Employee</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Task</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reimbursement_form">Reimbursement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contactus">Contact</a></li>
+                  </t>
+                  
+                      <!-- Visible only for Manager/HR Manager/Administrator -->
+                  <t t-if="request.env.user.has_group('hr.group_hr_user') or request.env.user.has_group('hr.group_hr_manager') or request.env.user.has_group('base.group_system')">
+                    <li class="nav-item"><a class="nav-link" href="#">User &amp; Companies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/employeeprofile">Employees</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/departments">Departments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Task</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reimbursement_form">Reimbursement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                  </t>
                 </ul>
               </div>
             </div>
