@@ -9,7 +9,7 @@ class EmployeeProfile(models.Model):
     user_id = fields.Many2one('res.users', string="User")
     hr_employee_id = fields.Many2one('hr.employee', string='HR Employee')
 
-    # Related fields (avoid duplication, always in sync)
+    # Related fields (in sync)
     name = fields.Char(related="hr_employee_id.name", store=True)
     image = fields.Image(related="hr_employee_id.image_1920", store=True)
     job_position = fields.Char(related="hr_employee_id.job_title", store=True)
@@ -19,7 +19,6 @@ class EmployeeProfile(models.Model):
     department = fields.Many2one(related="hr_employee_id.department_id", store=True)
     company_id = fields.Many2one(related="hr_employee_id.company_id", store=True)
 
-    # Extra fields (only in profile)
     working_hours = fields.Char("Working Hours", tracking=True)
     timezone = fields.Selection(selection='_tz_get', string="Time Zone", tracking=True)
 

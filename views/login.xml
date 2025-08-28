@@ -13,7 +13,7 @@
         <!-- Login Body -->
         <form action="/login" method="post">
              <!-- CSRF token for security -->
-            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/> <!--CSRF token for the active session.-->
             <!-- Alter Message -->
             <t t-if="error">
                 <div class="alert alert-danger w-100 text-center">
