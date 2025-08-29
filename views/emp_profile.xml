@@ -1,21 +1,66 @@
 <odoo>
-  <template id="employee_profile_page">
-    <t t-call="website.layout">
-      <div class="container mt-5">
-        <div class="d-flex justify-content-center align-items-center mt-4 pt-3">
-            <div class="card login pt-4 d-flex flex-column align-items-center">
-                <h2>Employee Profile</h2>
-                <t t-if="employee">
-                <p><strong>Name:</strong> <t t-esc="employee.name"/></p>
-                <p><strong>Position:</strong> <t t-esc="employee.job_position"/></p>
-                <p><strong>Email:</strong> <t t-esc="employee.work_email"/></p>
-                </t>
-                <t t-else="">
-                <p>No profile found for your account.</p>
-                </t>
+    <!-- Single Profile Template (Normal Employee) -->
+    <template id="employee_profile_page">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <div class="d-flex justify-content-center align-items-center mt-4 pt-3">
+                    <div class="card login pt-4 d-flex flex-column align-items-center">
+                        <h2>Employee Profile</h2>
+                        <t t-if="profiles">
+                            <p><strong>Name:</strong> <t t-esc="profiles.name"/></p>
+                            <p><strong>Position:</strong> <t t-esc="profiles.job_position"/></p>
+                            <p><strong>Email:</strong> <t t-esc="profiles.work_email"/></p>
+                        </t>
+                        <t t-else="">
+                            <p>No profile found for your account.</p>
+                        </t>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-    </t>
-  </template>
+        </t>
+    </template>
+
+    <!--List View Template (Manager) -->
+    <template id="employee_profile_list_page">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <h2 class="mb-4">All Employee Profiles</h2>
+                <div class="row">
+                    <t t-foreach="profiles" t-as="emp">
+                        <div class="col-md-4 mb-3">
+                            <div class="card p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><t t-esc="emp.name"/></h5>
+                                    <p class="card-text"><strong>Position:</strong> <t t-esc="emp.job_position"/></p>
+                                    <p class="card-text"><strong>Email:</strong> <t t-esc="emp.work_email"/></p>
+                                    <a href="javascript:void(0);" class="btn search_button mt-2" data-bs-toggle="modal" 
+                                    data-bs-target="#employeeProfileModal" t-att-data-emp-id="emp.id">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <!-- Modal (Hidden by default) -->
+                    <div class="modal fade" id="employeeProfileModal" tabindex="-1" aria-labelledby="employeeProfileModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content shadow-lg rounded-3">
+                                
+                                <div class="modal-header search_button text-white">
+                                    <h5 class="modal-title" id="employeeProfileModalLabel">Employee Profile</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <!-- Profile content loads dynamically -->
+                                    <div id="employeeProfileContent" class="p-3 text-center text-muted">
+                                        Loading employee profile...
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
 </odoo>

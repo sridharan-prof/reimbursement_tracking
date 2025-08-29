@@ -29,7 +29,7 @@
                   </li>
                   
                       <!-- Visible only for Employee -->
-                  <t t-if="request.env.user.has_group('base.group_user') and not request.env.user.has_group('hr.group_hr_user') and not request.env.user.has_group('hr.group_hr_manager')">
+                  <t t-if="request.env.user.has_group('base.group_user') and not request.env.user.has_group('hr.group_hr_manager')">
                     <li class="nav-item"><a class="nav-link" href="/employeeprofile">Employee</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Attendance</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Task</a></li>

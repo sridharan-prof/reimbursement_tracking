@@ -19,6 +19,9 @@
     ],
     'assets': {
         'web.assets_backend': [
+            'reimbursement_tracking/static/src/css/employee_dashboard.css',
+            'reimbursement_tracking/static/src/js/employee_dashboard.js',
+            'reimbursement_tracking/static/src/xml/employee_dashboard.xml',
         ],
         'web.assets_frontend': [
             'reimbursement_tracking/static/src/js/hello_component.js',

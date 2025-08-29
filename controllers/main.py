@@ -18,9 +18,27 @@ class HelloOwlController(http.Controller):
                 return request.render('reimbursement_tracking.login_page', {'error': 'Invalid credentials'})
         return request.render('reimbursement_tracking.login_page')
     
-    @http.route('/employeeprofile', type='http', auth='user', website=True)
-    def employee_profile(self, **kw):
-        emp = request.env['employee.profile'].sudo().search([
-            ('user_id', '=', request.env.user.id)
-        ], limit=1)
-        return request.render('reimbursement_tracking.employee_profile_page', {'employee': emp})
+    # @http.route('/employeeprofile', type='http', auth='user', website=True)
+    # def employee_profile(self, **kw):
+    #     emp = request.env['employee.profile'].sudo().search([
+    #         ('user_id', '=', request.env.user.id)
+    #     ], limit=1)
+    #     return request.render('reimbursement_tracking.employee_profile_page', {'employee': emp})
+    
+    @http.route(['/employeeprofile'], type='http', auth="user", website=True)
+    def employee_profiles(self, **kw):
+        user = request.env.user
+
+        # Manager / HR / Admin
+        if user.has_group('hr.group_hr_manager') or user.has_group('base.group_system'):
+            profiles = request.env['employee.profile'].sudo().search([])
+            return request.render('reimbursement_tracking.employee_profile_list_page', {
+                'profiles': profiles
+            })      
+           
+        else:
+            # employee
+            profiles = request.env['employee.profile'].sudo().search([('user_id', '=', user.id)])
+            return request.render('reimbursement_tracking.employee_profile_page', {
+                'profiles': profiles
+            })

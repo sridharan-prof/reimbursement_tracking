@@ -1,0 +1,78 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="reimbursement_tracking.Employeeprofile">
+        <div class="o_employee_dashboard p-3">
+            <h2>Employee Dashboard</h2>
+
+            <!-- KPI Cards -->
+            <div class="row mb-3">
+                <div class="col card p-3 m-2 shadow-sm text-center">
+                    <h4>Total Employees</h4>
+                    <span t-esc="state.totalEmployees"/>
+                </div>
+                <div class="col card p-3 m-2 shadow-sm text-center">
+                    <h4>Total Departments</h4>
+                    <span t-esc="state.totalDepartments"/>
+                </div>
+                <div class="col card p-3 m-2 shadow-sm text-center">
+                    <h4>Missing Contacts</h4>
+                    <span t-esc="state.missingContacts"/>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="d-flex align-items-center mb-3">
+                <div class="input-group" style="max-width: 300px;">
+                    <span class="input-group-text">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control"
+                           placeholder="Search employees..." t-on-input="onSearch"/>
+                </div>
+            </div>
+
+            <!-- Recent Employees Table -->
+            <h4>Employees</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Employee Code</th>
+                        <th>Name</th>
+                        <th>Job Position</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="paginatedEmployees" t-as="e" t-key="e.id">
+                        <tr>
+                            <td><t t-esc="e.employee_code"/></td>
+                            <td><t t-esc="e.name"/></td>
+                            <td><t t-esc="e.job_position"/></td>
+                            <td><t t-esc="e.department and e.department[1]"/></td>
+                            <td><t t-esc="e.work_email"/></td>
+                            <td><t t-esc="e.work_mobile"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <button class="btn btn-outline-primary"
+                        t-on-click="goToPreviousPage"
+                        t-att-disabled="state.currentPage === 1">
+                    Previous
+                </button>
+
+                <span>Page <t t-esc="state.currentPage"/> of <t t-esc="pageCount"/></span>
+
+                <button class="btn btn-outline-primary"
+                        t-on-click="goToNextPage"
+                        t-att-disabled="state.currentPage === pageCount">
+                    Next
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

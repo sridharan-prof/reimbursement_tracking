@@ -11,4 +11,13 @@
     <menuitem
         id="employee_profile_menu" name="Employee Profile" sequence="1"
         action="action_employee_profile"  parent="menu_employee_root" />
+
+    <record id="action_employee_profile_client" model="ir.actions.client">
+        <field name="name">Employee profile</field>
+        <field name="tag">employee_profile_action</field>
+    </record>
+
+    <menuitem id="menu_employee_profile" name="Dashboard"
+            parent="menu_employee_root" action="action_employee_profile_client"/>
+
 </odoo>
