@@ -4,3 +4,5 @@ employee_profile,employee_profile,model_employee_profile,,1,1,1,1
 employee_reimbursement_details,employee_reimbursement_details,model_reimbursement_details,,1,1,1,1
 employee_reimbursement_state_change,employee_reimbursement_state_change,model_reimbursement_state_change_details,,1,1,1,1
 employee_reimbursement_type,employee_reimbursement_type,model_reimbursement_type,,1,1,1,1
+employee_profile_user,employee_profile_user,model_employee_profile,,1,1,0,0
+employee_profile_manager,employee_profile_manager,model_employee_profile,,1,1,1,1

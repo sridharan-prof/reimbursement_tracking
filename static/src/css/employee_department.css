@@ -49,19 +49,16 @@
     border-left: 5px solid #3498db;
     font-size: 16px;
 }
+
 .department-item {
     transition: background-color 0.3s ease;
 }
 
-.department-item:hover {
-    background-color: #dfe6e9;
-    cursor: pointer;
-}
 .o_dept_card .card {
     border: none;
     border-radius: 10px;
     background: #ffffff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .search_button{
@@ -77,7 +74,7 @@
 
 .o_dept_card .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(243, 239, 239, 0.998);
 }
 
 .navbar-brand {

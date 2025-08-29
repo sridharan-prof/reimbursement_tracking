@@ -1,6 +1,4 @@
 <odoo>
-
-
   <template id="reimbursement_tracking.departments_page_template" name="Departments Page">
     <t t-call="website.layout">
       <div class="container ">
@@ -17,7 +15,7 @@
           <!--Department List -->
           <div class="row">
             <t t-foreach="departments" t-as="dept">
-              <div class="col-md-4 mb-3">
+              <div class="col-md-4 mb-3 department-item">
                 <div class="card shadow-sm">
                   <div class="card-body">
                     <h5 class="card-title"><t t-esc="dept.name"/></h5>
@@ -30,7 +28,6 @@
           </div>
         </div>
       </div>
-
     </t>
   </template>
 </odoo>

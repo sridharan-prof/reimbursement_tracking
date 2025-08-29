@@ -3,6 +3,7 @@
     'version': "1.0",
     'depends': ['base', 'hr', 'web', 'website'],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'data/sequence.xml',
         'views/employee_departments_views.xml',
